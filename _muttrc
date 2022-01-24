@@ -1,0 +1,25 @@
+set from="`sed -ne '1{p;q;}' ~/.mutt_secrets`"
+set my_username="`sed -ne '2{p;q;}' ~/.mutt_secrets`"
+set my_password="`sed -ne '3{p;q;}' ~/.mutt_secrets`"
+
+set imap_user=$my_username
+set imap_pass=$my_password
+set spoolfile="imaps://imap.fastmail.com"
+set folder="imaps://imap.fastmail.com/INBOX"
+set record="imaps://imap.fastmail.com/Sent"
+set postponed="imaps://imap.fastmail.com/Drafts"
+set mbox="imaps://imap.fastmail.com/Archive"
+set trash="imaps://imap.fastmail.com/Trash"
+set read_inc=1000
+set write_inc=1000
+set mail_check=5
+
+set smtp_pass=$my_password
+set smtp_url="smtps://$my_username@smtp.fastmail.com:465/"
+set ssl_starttls=yes
+
+set sort=reverse-date-received
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+
+macro index,pager,attach A <save-entry><kill-line>~/Downloads/  
