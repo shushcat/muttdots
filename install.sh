@@ -12,7 +12,7 @@ for i in _*; do
         fi
 done
 
-ln -s "$BASE_DIR/_muttrc" "$HOME/.muttrc"
+ln -sf "$BASE_DIR/_muttrc" "$HOME/.muttrc"
 cp "$BASE_DIR/_mutt_secrets" "$HOME/.mutt_secrets"
 
 cd "${START_DIR}"
