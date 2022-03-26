@@ -23,5 +23,3 @@ set ssl_starttls=yes
 set sort=reverse-date-received
 auto_view text/html
 alternative_order text/plain text/enriched text/html
-
-macro index,pager,attach A <save-entry><kill-line>~/Downloads/  
