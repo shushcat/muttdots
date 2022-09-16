@@ -15,7 +15,7 @@ set read_inc=1000
 set write_inc=1000
 set mail_check=5
 
-set text_flowed
+set text_flowed=yes
 
 set smtp_authenticators="login"
 set smtp_pass=$my_password
@@ -26,5 +26,7 @@ set ssl_starttls=yes
 set sort=reverse-date-received
 set mailcap_path = ~/.mailcap
 auto_view text/html
+set wait_key=no
 
 macro attach s "<save-entry><bol>~/Downloads/<eol>"
+macro index,pager V "<shell-escape>mkdir -p $HOME/.cache/mutt<enter>v<search>\\[text/html<enter><pipe-entry>iconv -c --to-code=UTF8 > $HOME/.cache/mutt/browse_message.html<enter><shell-escape>firefox $HOME/.cache/mutt/browse_message.html<enter>q" "Open attachment with Firefox"
