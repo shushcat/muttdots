@@ -24,7 +24,7 @@ set ssl_force_tls=yes
 set ssl_starttls=yes
 
 set sort=reverse-date-received
+set mailcap_path = ~/.mailcap
 auto_view text/html
-alternative_order text/plain text/enriched text/html
 
 macro attach s "<save-entry><bol>~/Downloads/<eol>"
