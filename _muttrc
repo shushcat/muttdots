@@ -1,6 +1,5 @@
-set from="`sed -ne '1{p;q;}' ~/.mutt_secrets`"
-set my_username="`sed -ne '2{p;q;}' ~/.mutt_secrets`"
-set my_password="`sed -ne '3{p;q;}' ~/.mutt_secrets`"
+# Set private settings
+source $HOME/.mutt_secrets
 
 set imap_authenticators=login
 set imap_user=$my_username
@@ -22,6 +21,10 @@ set smtp_pass=$my_password
 set smtp_url="smtps://$my_username@smtp.fastmail.com:465/"
 set ssl_force_tls=yes
 set ssl_starttls=yes
+
+# Respond as the message addressee, without exposing your real name
+set reverse_name=yes
+set reverse_realname=no
 
 set sort=reverse-date-received
 set mailcap_path = ~/.mailcap
