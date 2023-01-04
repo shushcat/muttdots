@@ -42,6 +42,7 @@ bind index <esc>V noop
 bind index <esc>v noop
 bind index <esc><space> collapse-all
 bind index <space> collapse-thread
+bind index x sync-mailbox
 
 bind index \Cn noop
 bind index \Cp noop
