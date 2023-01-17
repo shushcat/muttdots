@@ -40,41 +40,38 @@ unset confirmappend
 unset confirmcreate
 set pager_stop
 
-# Keyboard shortcuts:
+# Bindings & macros:
 
+bind index <esc><space> collapse-all
 bind index <esc>V noop
 bind index <esc>v noop
-bind index <esc><space> collapse-all
 bind index <space> collapse-thread
-bind index x sync-mailbox
 
+# Navigation
+bind alias,index,browser,query G last-entry
+bind alias,index,browser,query gg first-entry
+bind index N search-opposite
 bind index \Cn noop
 bind index \Cp noop
-bind alias,index,browser,query G last-entry
-bind pager G bottom
-bind alias,index,browser,query gg first-entry
-bind pager gg top
-
-bind pager <up> previous-line
-bind pager <down> next-line
-
 bind index n search-next
-bind index N search-opposite
-
+bind index x sync-mailbox
 bind index { previous-thread
-bind pager { half-up
-
 bind index } next-thread
-bind pager } half-down
-
 bind index,pager A create-alias
 bind index,pager R group-reply
+bind pager <down> next-line
+bind pager <up> previous-line
+bind pager G bottom
+bind pager b previous-page
+bind pager gg top
+bind pager { half-up
+bind pager } half-down
 
 # Readline keys for command history
-bind editor <up> history-up
-bind editor \Cp history-up
 bind editor <down> history-down
+bind editor <up> history-up
 bind editor \Cn history-down
+bind editor \Cp history-up
 
 # Mailbox shortcuts
 macro index,pager ,d "<change-folder>$postponed<enter><buffy-list>" "Open drafts"
