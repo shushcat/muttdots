@@ -1,6 +1,10 @@
 # Set private settings
 source $HOME/.mutt_secrets
 
+set alias_file=$HOME/.mutt_secrets
+set sort_alias=unsorted
+set reverse_alias=yes
+
 set imap_authenticators=login
 set imap_user=$my_username
 set imap_pass=$my_password
