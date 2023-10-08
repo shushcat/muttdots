@@ -47,6 +47,8 @@ bind index <esc>V noop
 bind index <esc>v noop
 bind index <space> collapse-thread
 bind index,pager c mail
+bind index,pager s flag-message
+macro index,pager $ "<sync-mailbox><imap-fetch-mail>" "Sync changes and fetch new mail"
 
 # Navigation
 bind alias,index,browser,query G last-entry
@@ -75,10 +77,10 @@ bind editor \Cn history-down
 bind editor \Cp history-up
 
 # Mailbox shortcuts
-macro index,pager ,d "<change-folder>$postponed<enter><buffy-list>" "Open drafts"
-macro index,pager ,i "<change-folder>$spoolfile<enter><buffy-list>" "Open inbox"
-macro index,pager ,s "<change-folder>$record<enter><buffy-list>"    "Open sent mail"
-macro index,pager ,t "<change-folder>$trash<enter><buffy-list>"     "Open trash"
+macro index,pager gd "<change-folder>$postponed<enter><buffy-list>" "Open drafts"
+macro index,pager gi "<change-folder>$spoolfile<enter><buffy-list>" "Open inbox"
+macro index,pager gs "<change-folder>$record<enter><buffy-list>"    "Open sent mail"
+macro index,pager gt "<change-folder>$trash<enter><buffy-list>"     "Open trash"
 
 macro attach s "<save-entry><bol>~/Downloads/<eol>" "Save attachment to ~/Downloads/"
 macro attach S "<tag-prefix-cond><save-entry><bol>~/Downloads/<eol><enter>" "Save tagged attachments to ~/Downloads/"
