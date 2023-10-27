@@ -26,9 +26,11 @@ set smtp_url="smtps://$my_username@smtp.fastmail.com:465/"
 set ssl_force_tls=yes
 set ssl_starttls=yes
 
-# Respond as the message addressee, without exposing your real name
+# Respond as the message addressee
 set reverse_name=yes
 set reverse_realname=no
+unset envelope_from_address
+set use_envelope_from
 
 set sort=reverse-date-received
 set mailcap_path = ~/.mailcap
