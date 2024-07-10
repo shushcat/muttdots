@@ -37,7 +37,6 @@ set mailcap_path = ~/.mailcap
 auto_view text/html
 set wait_key=no
 
-save-hook . ~/Documents/Mail/%a
 unset confirmappend
 unset confirmcreate
 set pager_stop
