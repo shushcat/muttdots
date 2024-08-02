@@ -18,6 +18,8 @@ set read_inc=1000
 set write_inc=1000
 set mail_check=5
 
+save-hook . $my_local_archive
+
 set text_flowed=yes
 
 set smtp_authenticators="login"
@@ -37,7 +39,6 @@ set mailcap_path = ~/.mailcap
 auto_view text/html
 set wait_key=no
 
-save-hook . ~/Documents/Mail/%a
 unset confirmappend
 unset confirmcreate
 set pager_stop
@@ -80,10 +81,11 @@ bind editor \Cn history-down
 bind editor \Cp history-up
 
 # Mailbox shortcuts
-macro index,pager gd "<change-folder>$postponed<enter><buffy-list>" "Open drafts"
-macro index,pager gi "<change-folder>$spoolfile<enter><buffy-list>" "Open inbox"
-macro index,pager gs "<change-folder>$record<enter><buffy-list>"    "Open sent mail"
-macro index,pager gt "<change-folder>$trash<enter><buffy-list>"     "Open trash"
+macro index,pager gd "<change-folder>$postponed<enter><buffy-list>" 		"Open drafts"
+macro index,pager gi "<change-folder>$spoolfile<enter><buffy-list>" 		"Open inbox"
+macro index,pager gs "<change-folder>$record<enter><buffy-list>"    		"Open sent mail"
+macro index,pager gt "<change-folder>$trash<enter><buffy-list>"     		"Open trash"
+macro index,pager ga "<change-folder>$my_local_archive<enter><buffy-list>"	"Open local archive"
 
 macro attach s "<save-entry><bol>~/Downloads/<eol>" "Save attachment to ~/Downloads/"
 macro attach S "<tag-prefix-cond><save-entry><bol>~/Downloads/<eol><enter>" "Save tagged attachments to ~/Downloads/"
