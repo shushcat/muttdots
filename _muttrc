@@ -53,6 +53,7 @@ bind index,pager c mail
 bind index,pager y save-message
 bind index,pager s flag-message
 macro index,pager $ "<sync-mailbox><imap-fetch-mail>" "Sync changes and fetch new mail"
+bind index,pager R group-reply	# Reply-all
 
 # Navigation
 bind alias,index,browser,query G last-entry
