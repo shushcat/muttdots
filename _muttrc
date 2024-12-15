@@ -91,4 +91,6 @@ macro index,pager ga "<change-folder>$my_local_archive<enter><buffy-list>"	"Open
 macro attach s "<save-entry><bol>~/Downloads/<eol>" "Save attachment to ~/Downloads/"
 macro attach S "<tag-prefix-cond><save-entry><bol>~/Downloads/<eol><enter>" "Save tagged attachments to ~/Downloads/"
 
-macro index,pager V "<shell-escape>mkdir -p $HOME/.cache/mutt<enter>v<search>\\[text/html<enter><pipe-entry>iconv -c --to-code=UTF8 > $HOME/.cache/mutt/browse_message.html<enter><shell-escape>firefox $HOME/.cache/mutt/browse_message.html<enter>q" "Open attachment with Firefox"
+# Assumes the presence of a working `open` executable; for Windows and Linux,
+# see https://github.com/shushcat/bin/blob/main/open.
+macro index,pager V "<shell-escape>mkdir -p $HOME/.cache/mutt<enter>v<search>\\[text/html<enter><pipe-entry>iconv -c --to-code=UTF8 > $HOME/.cache/mutt/browse_message.html<enter><shell-escape>open $HOME/.cache/mutt/browse_message.html<enter>q" "Open attachment in default browser"
